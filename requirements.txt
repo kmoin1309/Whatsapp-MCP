@@ -1,0 +1,11 @@
+# requirements.txt
+
+# Core packages
+python-dotenv
+
+# Twilio for WhatsApp API
+twilio
+
+# Optional: version constraints
+# python-dotenv>=1.0.0
+# twilio>=8.0.0
