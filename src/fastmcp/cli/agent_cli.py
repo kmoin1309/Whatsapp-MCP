@@ -9,7 +9,11 @@ def run_example_agent():
     recipient = input("Enter recipient number (with +countrycode): ")
     message = input("Enter message: ")
     result = agent.act({"to": recipient, "message": message})
-    print(f"Message sent. SID: {result}")
+    if isinstance(result, dict) and result.get("status") == "success":
+        print(f"Message sent. SID: {result['sid']}")
+    else:
+        print(
+            f"Error: {result.get('error') if isinstance(result, dict) else result}")
 
 
 def main():
